@@ -38,19 +38,23 @@ class AddressBook:
         Return:
             Returning dictionary.
         """
-        lst = []
-        lst.append(str(input("Enter the first name : ")))
-        lst.append(str(input("Enter the last name : ")))
-        lst.append(str(input("Enter the address : ")))
-        lst.append(str(input("Enter the city : ")))
-        lst.append(str(input("Enter the state : ")))
-        lst.append(int(input("Enter the zip : ")))
-        lst.append(int(input("Enter the phone number: ")))
-        lst.append(str(input("Enter the emailId : ")))
-        contact_length = len(AddressBook.contact)
-        AddressBook.contact[contact_length] = lst
-        AddressBook.contact_length += 1
-
+        while True:
+            option = int(input( '1. Add multiple contacts, 2. exit '))
+            if option == 1:
+                lst = []
+                lst.append(str(input("Enter the first name : ")))
+                lst.append(str(input("Enter the last name : ")))
+                lst.append(str(input("Enter the address : ")))
+                lst.append(str(input("Enter the city : ")))
+                lst.append(str(input("Enter the state : ")))
+                lst.append(int(input("Enter the zip : ")))
+                lst.append(int(input("Enter the phone number: ")))
+                lst.append(str(input("Enter the emailId : ")))
+                contact_length = len(AddressBook.contact)
+                AddressBook.contact[contact_length] = lst
+                AddressBook.contact_length += 1
+            else:
+                break
         return AddressBook.contact
 
     def displayContact(self):
