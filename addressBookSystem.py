@@ -36,7 +36,7 @@ class AddressBook:
         Parameter:
             self is as parameter
         Return:
-            Returning nothing but printing the list.
+            Returning dictionary.
         """
         lst = []
         lst.append(str(input("Enter the first name : ")))
@@ -50,6 +50,7 @@ class AddressBook:
         contact_length = len(AddressBook.contact)
         AddressBook.contact[contact_length] = lst
         AddressBook.contact_length += 1
+
         return AddressBook.contact
 
     def displayContact(self):
@@ -59,7 +60,7 @@ class AddressBook:
         Parameter:
             self is as parameter
         Return:
-            Returning nothing but printing the list.
+            Returning nothing but printing the dictionary.
         """
         print(AddressBook.contact)
 
@@ -70,7 +71,7 @@ class AddressBook:
         Parameter:
             self is as parameter
         Return:
-            Returning nothing but modify the list.
+            Returning dictionary.
         """
 
         checkName = input("Enter the first name to check is it in contact or not")
@@ -121,6 +122,25 @@ class AddressBook:
                 break
         return checkName, AddressBook.contact
 
+    def deleteContacts(self):
+        """
+        Description:
+            Delete the contact of the person using their name. .
+        Parameter:
+            self is as parameter
+        Return:
+            Returning dictionary.
+        """
+        checkName = input("Enter the first name to check is it in contact or not")
+        for i in range(AddressBook.contact_length):
+            if checkName == AddressBook.contact[i][0]:
+                del AddressBook.contact[i]
+                print("Delete the person")
+                break
+            else:
+                print("Not in list")
+        return AddressBook.contact
+
     def menu(self):
         """
         Description:
@@ -132,7 +152,7 @@ class AddressBook:
         """
 
         print(
-            'Enter 1. To Add Contacts 2. For display a Contact  3.To edit the contacts 4.To Exit')
+            'Enter 1. To Add Contacts 2. For display a Contact  3.To edit the contacts 4.To delete the contact 5.To Exit')
         while True:
             choice = int(input('Enter your choice: '))
             if choice == 1:
@@ -142,6 +162,8 @@ class AddressBook:
             elif choice == 3:
                 self.editContact()
             elif choice == 4:
+                self.deleteContacts()
+            elif choice == 5:
                 exit()
             else:
                 print('Invalid Option. Try Again!')
