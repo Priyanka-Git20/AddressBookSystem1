@@ -127,7 +127,7 @@ if __name__ == '__main__':
     print("Welcome to the address book system.")
     myBook = AddressBook()
     print(
-        'Enter 1. To Add Contacts 2. For display a Contact  3.To Exit')
+        'Enter 1. To Add Contacts 2. For display a Contact 3.To edit contacts  4.To Exit')
     while True:
         choice = int(input('Enter your choice: '))
         if choice == 1:
