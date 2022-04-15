@@ -3,7 +3,7 @@
     @Date: 2022-04-11 1:30:00
     @Last Modified by: Priyanka Salunkhe
     @Last Modified time: 2022-04-11 3:00:00
-    @Title :Ability to edit the contact in address book.
+    @Title :Ability to delete the contact in address book.
 '''
 
 
@@ -147,7 +147,7 @@ if __name__ == '__main__':
     print("Welcome to the address book system.")
     myBook = AddressBook()
     print(
-        'Enter 1. To Add Contacts 2. For display a Contact  3.To Exit')
+        'Enter 1. To Add Contacts 2. For display a Contact 3.To edit contacts 4.To delete contacts 5.To Exit')
     while True:
         choice = int(input('Enter your choice: '))
         if choice == 1:
@@ -165,6 +165,8 @@ if __name__ == '__main__':
         elif choice == 3:
             myBook.editContact(firstName=1, lastName=2, address=3,city= 4, state=5, zip=6, phoneNumber=7, emailId=8)
         elif choice == 4:
+            myBook.deleteContacts()
+        elif choice == 5:    
             exit()
         else:
             print('Invalid Option. Try Again!')
